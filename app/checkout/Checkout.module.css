@@ -1,0 +1,350 @@
+.checkoutWrapper {
+    padding: 8rem 0 5rem;
+    background-color: #fdfaf7;
+}
+
+.successWrapper {
+    padding: 12rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.successWrapper h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-playfair);
+}
+
+.homeBtn {
+    background-color: var(--text-primary);
+    color: white;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.homeBtn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.pageTitle {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    font-family: var(--font-playfair);
+}
+
+.checkoutGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.stepsNav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.step {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+.activeStep {
+    color: var(--text-primary);
+}
+
+.activeStep::after {
+    content: '';
+    position: absolute;
+    bottom: -1.1rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--text-primary);
+}
+
+.formSide {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.form h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sectionMargin {
+    margin-top: 3.5rem !important;
+}
+
+.form input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #fdfaf7;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.sectionHeader h3 {
+    margin-bottom: 0;
+}
+
+.guestBadge {
+    background: var(--text-primary);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.loginPrompt {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.loginLink {
+    color: var(--text-primary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.form input:focus {
+    border-color: var(--text-primary);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.nextBtn,
+.waBtn {
+    background-color: var(--text-primary);
+    color: white;
+    width: 100%;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.waBtn {
+    background-color: #25d366;
+    margin-top: 0;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+
+.nextBtn:hover,
+.waBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.waBtn:hover {
+    background-color: #1ebe57;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.walletInfo {
+    background-color: #fafafa;
+    padding: 2.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0 2.5rem;
+    border: 1px dashed var(--border);
+}
+
+.walletCard {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1rem;
+}
+
+.walletCard strong {
+    color: var(--text-primary);
+}
+
+.paymentNote {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 1.2rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    gap: 2rem;
+}
+
+.backLink {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.orderSummary {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 120px;
+}
+
+.orderSummary h4 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.summaryItem {
+    display: flex;
+    gap: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.2rem;
+}
+
+.itemThumb {
+    width: 64px;
+    height: 80px;
+    background-color: var(--bg-secondary);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.itemInfo p {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.itemInfo span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.totals {
+    padding-top: 1rem;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.total {
+    border-top: 1.5px solid var(--text-primary);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+@media (max-width: 992px) {
+    .checkoutGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .summarySide {
+        order: -1;
+    }
+
+    .orderSummary {
+        position: static;
+        padding: 2rem;
+    }
+
+    .formSide {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkoutWrapper {
+        padding: 7rem 0 3rem;
+    }
+
+    .pageTitle {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .stepsNav {
+        gap: 1rem;
+    }
+
+    .step {
+        font-size: 0.7rem;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+
+    .backLink {
+        text-align: center;
+    }
+}

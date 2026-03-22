@@ -1,0 +1,353 @@
+.pageWrapper {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+.header {
+    background-color: var(--bg-secondary);
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    padding: 4rem 2rem;
+}
+
+/* ── Sidebar Filters ── */
+.sidebar {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+.sidebarHeader {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.filterSection {
+    margin-bottom: 3rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.filterSection h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* Search Box */
+.searchBox input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.searchBox input:focus {
+    border-color: var(--text-primary);
+}
+
+.clearBtn {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Category List & Sub items */
+.categoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.categoryItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryLink {
+    width: 100%;
+    text-align: left;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.categoryLink:hover {
+    color: var(--text-primary);
+    padding-left: 0.4rem;
+}
+
+.activeCategory {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.categoryLink svg {
+    transition: transform 0.3s;
+}
+
+.rotated {
+    transform: rotate(90deg);
+}
+
+.subItems {
+    padding: 0.5rem 0 0.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.subLink {
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.subLink::before {
+    content: '•';
+    position: absolute;
+    left: -0.8rem;
+    opacity: 0.4;
+}
+
+.subLink:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+.activeSub {
+    color: var(--text-primary);
+    font-weight: 700;
+    background: var(--bg-secondary);
+}
+
+/* Concern Chips */
+.chipGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.chip {
+    padding: 0.6rem 1.2rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.chip:hover {
+    border-color: var(--text-primary);
+}
+
+.activeChip {
+    background: var(--text-primary);
+    color: white;
+    border-color: var(--text-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Price Range */
+.priceInputs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.priceInputs input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+/* ── Listing Area ── */
+.listingArea {
+    width: 100%;
+}
+
+.listingBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.listingBar p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+}
+
+.sortSelect {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+}
+
+.sortSelect:focus {
+    border-color: var(--text-primary);
+}
+
+.mobileFilterBtn {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.loadingArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0;
+    gap: 1.5rem;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: var(--accent);
+}
+
+.noResults {
+    text-align: center;
+    padding: 6rem 0;
+    grid-column: 1 / -1;
+}
+
+.noResults p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.noResults button {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        z-index: 2000;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebarHeader {
+        display: flex;
+    }
+
+    .mobileFilterBtn {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .mainGrid {
+        padding: 2rem 1rem;
+    }
+}

@@ -1,0 +1,89 @@
+.footer {
+    background-color: var(--bg-secondary);
+    padding-top: 5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footerSection h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footerSection ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footerSection ul li a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.brandLogo {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.footerDesc {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.socials {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.socials a {
+    color: var(--text-primary);
+}
+
+.newsletterForm {
+    display: flex;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--text-primary);
+    padding-bottom: 0.5rem;
+}
+
+.newsletterForm input {
+    background: transparent;
+    border: none;
+    flex: 1;
+    padding: 0.5rem 0;
+    outline: none;
+    font-family: inherit;
+}
+
+.footerBottom {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+    .footerGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footerGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

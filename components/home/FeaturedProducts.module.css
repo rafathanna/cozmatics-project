@@ -1,0 +1,64 @@
+.section {
+    padding: 8rem 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+}
+
+.titleArea h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.titleArea p {
+    color: var(--text-secondary);
+}
+
+.navBtns {
+    display: flex;
+    gap: 1rem;
+}
+
+.navBtns button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.navBtns button:hover {
+    background-color: var(--text-primary);
+    color: white;
+    border-color: var(--text-primary);
+}
+
+.embla {
+    overflow: hidden;
+}
+
+.emblaContainer {
+    display: flex;
+    gap: 2rem;
+}
+
+.emblaSlide {
+    flex: 0 0 280px;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+}

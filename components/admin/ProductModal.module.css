@@ -1,0 +1,309 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modalContent {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    padding: 3rem;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modalContent h2 {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+    font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+    border-color: var(--text-primary);
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.submitBtn {
+    background: var(--text-primary);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.errorInput {
+    border-color: #c62828 !important;
+}
+
+.errorText {
+    color: #c62828;
+    font-size: 0.8rem;
+    margin-top: -1rem;
+    display: block;
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.checkboxGroup input {
+    width: auto;
+    cursor: pointer;
+}
+
+.checkboxGroup label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Image Upload Zone ===== */
+
+.hiddenInput {
+    display: none;
+}
+
+.dropZone {
+    border: 2px dashed var(--border, #d0d0d0);
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #fafafa;
+}
+
+.dropZone:hover {
+    border-color: var(--text-primary, #333);
+    background: #f4f4f4;
+}
+
+.dropZoneActive {
+    border-color: var(--accent, #b08d6e);
+    background: rgba(176, 141, 110, 0.06);
+    transform: scale(1.01);
+}
+
+.dropIcon {
+    color: var(--text-secondary, #999);
+}
+
+.dropText {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #666);
+    text-align: center;
+}
+
+.dropText span {
+    color: var(--accent, #b08d6e);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.dropHint {
+    font-size: 0.78rem;
+    color: #aaa;
+}
+
+/* ===== Image Preview ===== */
+
+.previewContainer {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    max-height: 240px;
+    background: #f5f5f5;
+}
+
+.imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.previewOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.previewContainer:hover .previewOverlay {
+    opacity: 1;
+}
+
+.replaceBtn,
+.removeBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.replaceBtn:hover,
+.removeBtn:hover {
+    transform: scale(1.05);
+}
+
+.replaceBtn {
+    background: white;
+    color: #333;
+}
+
+.removeBtn {
+    background: #c62828;
+    color: white;
+}
+
+/* ===== Progress Bar ===== */
+
+.progressWrapper {
+    position: relative;
+    width: 100%;
+    height: 26px;
+    background: #eee;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent, #b08d6e), #d4a574);
+    border-radius: 13px;
+    transition: width 0.3s ease;
+}
+
+.progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.modalDeleteBtn {
+    background: #ffebee;
+    color: #c62828;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.modalDeleteBtn:hover {
+    background: #ffcdd2;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,11 @@
+.layoutWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    padding-top: 0;
+    /* Nav is sticky and transparent initially */
+}
