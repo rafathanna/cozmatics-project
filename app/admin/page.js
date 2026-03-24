@@ -40,7 +40,9 @@ import {
     Clock,
     Bell,
     LogOut,
-    Home
+    Home,
+    Menu,
+    X
 } from "lucide-react";
 import styles from "./Admin.module.css";
 import ProductModal from "@/components/admin/ProductModal";
@@ -89,6 +91,7 @@ const AdminDashboard = () => {
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [selectedRequest, setSelectedRequest] = useState(null);
     const [notifications, setNotifications] = useState([]);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const [stats, setStats] = useState({
         totalCustomers: 0,
@@ -389,7 +392,10 @@ const AdminDashboard = () => {
     }
 
     const renderSidebar = () => (
-        <aside className={styles.sidebar}>
+        <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.openSidebar : ''}`}>
+            <button className={styles.closeSidebarBtn} onClick={() => setIsSidebarOpen(false)}>
+                <X size={24} />
+            </button>
             <div className={styles.sidebarHeader}>
                 <div className={styles.sidebarLogo}>COZMATICS</div>
                 <span className={styles.sidebarTag}>Admin Panel</span>
@@ -398,42 +404,42 @@ const AdminDashboard = () => {
             <nav className={styles.sidebarNav}>
                 <button
                     className={`${styles.sidebarItem} ${activeTab === 'overview' ? styles.activeSidebarItem : ''}`}
-                    onClick={() => setActiveTab('overview')}
+                    onClick={() => { setActiveTab('overview'); setIsSidebarOpen(false); }}
                 >
                     <LayoutDashboard size={20} />
                     {t.tabs.overview}
                 </button>
                 <button
                     className={`${styles.sidebarItem} ${activeTab === 'products' ? styles.activeSidebarItem : ''}`}
-                    onClick={() => setActiveTab('products')}
+                    onClick={() => { setActiveTab('products'); setIsSidebarOpen(false); }}
                 >
                     <Package size={20} />
                     {t.tabs.inventory}
                 </button>
                 <button
                     className={`${styles.sidebarItem} ${activeTab === 'orders' ? styles.activeSidebarItem : ''}`}
-                    onClick={() => setActiveTab('orders')}
+                    onClick={() => { setActiveTab('orders'); setIsSidebarOpen(false); }}
                 >
                     <ShoppingBag size={20} />
                     {t.tabs.orders}
                 </button>
                 <button
                     className={`${styles.sidebarItem} ${activeTab === 'coupons' ? styles.activeSidebarItem : ''}`}
-                    onClick={() => setActiveTab('coupons')}
+                    onClick={() => { setActiveTab('coupons'); setIsSidebarOpen(false); }}
                 >
                     <Plus size={20} />
                     {t.tabs.coupons}
                 </button>
                 <button
                     className={`${styles.sidebarItem} ${activeTab === 'requests' ? styles.activeSidebarItem : ''}`}
-                    onClick={() => setActiveTab('requests')}
+                    onClick={() => { setActiveTab('requests'); setIsSidebarOpen(false); }}
                 >
                     <MessageSquare size={20} />
                     {t.tabs.requests}
                 </button>
                 <button
                     className={`${styles.sidebarItem} ${activeTab === 'settings' ? styles.activeSidebarItem : ''}`}
-                    onClick={() => setActiveTab('settings')}
+                    onClick={() => { setActiveTab('settings'); setIsSidebarOpen(false); }}
                 >
                     <Settings size={20} />
                     {t.tabs.settings}
@@ -967,6 +973,22 @@ const AdminDashboard = () => {
                 {renderSidebar()}
 
                 <main className={styles.mainLayout}>
+                    {/* Mobile Navigation */}
+                    <div className={styles.mobileNav}>
+                        <div className={styles.mobileNavTitle}>
+                            {language === 'ar' ? 'لوحة التحكم' : 'Admin Panel'}
+                        </div>
+                        <button className={styles.menuBtn} onClick={() => setIsSidebarOpen(true)}>
+                            <Menu size={24} />
+                        </button>
+                    </div>
+
+                    {/* Sidebar Overlay */}
+                    <div 
+                        className={`${styles.sidebarOverlay} ${isSidebarOpen ? styles.open : ''}`} 
+                        onClick={() => setIsSidebarOpen(false)}
+                    />
+
                     {/* Toast Notifications */}
                     <div className={styles.toastContainer}>
                         {notifications.map(n => (
