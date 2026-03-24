@@ -29,6 +29,7 @@
     /* Slate 800 */
     font-family: 'Inter', -apple-system, sans-serif;
     animation: fadeIn 0.5s ease-out;
+    overflow-x: hidden;
 }
 
 /* ── Sidebar ── */
@@ -167,6 +168,7 @@
     padding: 2.5rem 4rem;
     max-width: 1600px;
     transition: margin 0.3s ease;
+    min-width: 0;
 }
 
 .sidebarWrapper[dir="rtl"] .mainLayout {
@@ -540,6 +542,7 @@
     padding: 0.6rem 1.25rem;
     border-radius: 12px;
     width: 300px;
+    max-width: 100%;
     border: 1px solid transparent;
     transition: all 0.2s;
 }
@@ -609,6 +612,12 @@
     color: #1e293b;
     border-bottom: 1px solid #f1f5f9;
     padding-bottom: 1rem;
+}
+
+.settingsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 /* ── Toasts ── */
@@ -831,5 +840,19 @@
     .addBtn {
         width: 100%;
         justify-content: center;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .controls .searchBox {
+        width: 100% !important;
+    }
+
+    .settingsGrid {
+        grid-template-columns: 1fr !important;
     }
 }

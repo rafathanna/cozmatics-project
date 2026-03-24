@@ -901,7 +901,7 @@ const AdminDashboard = () => {
 
             <div className={styles.settingsSection}>
                 <h3>{t.settings.identity}</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div className={styles.settingsGrid}>
                     <div className={styles.formGroup}>
                         <label>{t.settings.storeName}</label>
                         <input type="text" className={styles.filterSelect} style={{ width: '100%' }} value={settings.storeName} onChange={e => setSettings({ ...settings, storeName: e.target.value })} />
@@ -925,7 +925,7 @@ const AdminDashboard = () => {
 
             <div className={styles.settingsSection}>
                 <h3>{t.settings.contact}</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div className={styles.settingsGrid}>
                     <div className={styles.formGroup}>
                         <label>{t.settings.phone}</label>
                         <input type="text" className={styles.filterSelect} style={{ width: '100%' }} value={settings.phoneNumber} onChange={e => setSettings({ ...settings, phoneNumber: e.target.value })} />
@@ -939,7 +939,7 @@ const AdminDashboard = () => {
 
             <div className={styles.settingsSection}>
                 <h3>{t.settings.shipping}</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div className={styles.settingsGrid}>
                     <div className={styles.formGroup}>
                         <label>{t.settings.shippingFee}</label>
                         <input type="number" className={styles.filterSelect} style={{ width: '100%' }} value={settings.shippingFee} onChange={e => setSettings({ ...settings, shippingFee: Number(e.target.value) })} />
@@ -953,7 +953,7 @@ const AdminDashboard = () => {
 
             <div className={styles.settingsSection}>
                 <h3>{t.settings.social}</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div className={styles.settingsGrid}>
                     <div className={styles.formGroup}>
                         <label>{t.settings.facebook}</label>
                         <input type="text" className={styles.filterSelect} style={{ width: '100%' }} value={settings.facebook} onChange={e => setSettings({ ...settings, facebook: e.target.value })} />
