@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     padding: 1rem 2rem;
     background: white;
     border-radius: 8px;
@@ -43,12 +44,31 @@
     box-shadow: var(--shadow-md);
 }
 
-.brandLogo {
+.brandImage {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(80%);
+    transition: all 0.3s ease;
+}
+
+.brandName {
     font-family: var(--font-playfair);
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--accent);
+    color: var(--text-muted);
     letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.brandItem:hover .brandImage {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.05);
+}
+
+.brandItem:hover .brandName {
+    color: var(--accent);
+    transform: scale(1.05);
 }
 
 @keyframes scroll {

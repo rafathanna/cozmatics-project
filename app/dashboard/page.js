@@ -38,14 +38,19 @@ const UserDashboard = () => {
         try {
             const q = query(
                 collection(db, "orders"),
-                where("customerEmail", "==", user.email),
-                orderBy("createdAt", "desc")
+                where("customerEmail", "==", user.email)
             );
             const querySnapshot = await getDocs(q);
             const allOrders = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-            // Filter by email in memory to avoid Firestore Index requirement
-            const filtered = allOrders.filter(o => o.customerEmail === user.email);
-            setOrders(filtered);
+            
+            // Sort in-memory to avoid composite index requirement
+            const sortedOrders = allOrders.sort((a, b) => {
+                const dateA = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt);
+                const dateB = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt);
+                return dateB - dateA;
+            });
+
+            setOrders(sortedOrders);
         } catch (error) {
             console.error("Error fetching user orders:", error);
         } finally {

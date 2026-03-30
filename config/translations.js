@@ -49,7 +49,8 @@ export const translations = {
                 redness: "Redness",
                 dandruff: "Dandruff",
                 splitEnds: "Split Ends",
-                hairLoss: "Hair Loss"
+                hairLoss: "Hair Loss",
+                stretchMarks: "Stretch Marks"
             }
         },
         shop: {
@@ -486,7 +487,8 @@ export const translations = {
                 redness: "الاحمرار",
                 dandruff: "قشرة الرأس",
                 splitEnds: "تقصف الأطراف",
-                hairLoss: "تساقط الشعر"
+                hairLoss: "تساقط الشعر",
+                stretchMarks: "علامات التمدد"
             }
         },
         shop: {

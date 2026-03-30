@@ -124,6 +124,19 @@
     }
 
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .categoryItem {
+        padding: 1rem;
+    }
+
+    .catName {
+        font-size: 1.2rem;
+    }
+
+    .exploreBtn {
+        font-size: 0.7rem;
     }
 }

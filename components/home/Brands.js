@@ -5,12 +5,12 @@ import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/config/translations";
 
 const brands = [
-    { name: "Olea", logo: "OLEA" },
-    { name: "Lumish", logo: "LUMISH" },
-    { name: "Aura", logo: "AURA" },
-    { name: "Cozmatics", logo: "COZMATICS" },
-    { name: "Pure", logo: "PURE" },
-    { name: "Velvet", logo: "VELVET" }
+    { name: "CeraVe", logo: "https://www.google.com/s2/favicons?sz=256&domain_url=cerave.com" },
+    { name: "Cetaphil", logo: "https://www.google.com/s2/favicons?sz=256&domain_url=cetaphil.com" },
+    { name: "La Roche-Posay", logo: "https://www.google.com/s2/favicons?sz=256&domain_url=laroche-posay.us" },
+    { name: "Vichy", logo: "https://www.google.com/s2/favicons?sz=256&domain_url=vichyusa.com" },
+    { name: "Eucerin", logo: "https://www.google.com/s2/favicons?sz=256&domain_url=eucerinus.com" },
+    { name: "Neutrogena", logo: "https://www.google.com/s2/favicons?sz=256&domain_url=neutrogena.com" }
 ];
 
 const Brands = () => {
@@ -28,7 +28,8 @@ const Brands = () => {
                     <div className={styles.brandsList}>
                         {brands.concat(brands).map((brand, index) => (
                             <div key={index} className={styles.brandItem}>
-                                <span className={styles.brandLogo}>{brand.logo}</span>
+                                <img src={brand.logo} alt={brand.name} className={styles.brandImage} loading="lazy" />
+                                <span className={styles.brandName}>{brand.name}</span>
                             </div>
                         ))}
                     </div>
